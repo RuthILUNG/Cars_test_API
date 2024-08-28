@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Management</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: 0 auto; }
+        .form { margin-bottom: 20px; }
+        .form input { margin: 5px 0; }
+        .car { border: 1px solid #ddd; padding: 10px; margin: 10px 0; }
+        .car div { margin: 5px 0; }
+    </style>
+</head>
+<body x-data="carManager()" x-init="init()">
+    <div class="container">
+        <h1>Car CRUD</h1>
+
+        <!-- Create Car Form -->
+        <div class="form">
+
+            <div x-data="carManager">
+                <div>
+                    <button @click="fetchPopularCar">Get Most Popular Car</button>
+                    <p x-text="'Most Popular Car: ' + popularCar"></p>
+                </div>
+            
+                
+            
+            <h2>Add New Car</h2>
+            <input x-model="newCar.color" placeholder="Color" />
+            <input x-model="newCar.make" placeholder="Make" />
+            <input x-model="newCar.model" placeholder="Model" />
+            <input x-model="newCar.reg_number" placeholder="Registration Number" />
+            <button @click="addCar()">Add Car</button>
+        </div>
+
+        <!-- Update Car Form -->
+        <div class="form">
+            <h2>Update Car</h2>
+            <input x-model="updateCar.reg_number" placeholder="Registration Number" />
+            <input x-model="updateCar.color" placeholder="New Color " />
+            <input x-model="updateCar.model" placeholder="New Model " />
+            <button @click="updateCarDetails()">Update Car</button>
+        </div>
+
+        <!-- Delete Car Form -->
+        <div class="form">
+            <h2>Delete Car</h2>
+            <input x-model="deleteCar.reg_number" placeholder="Registration Number" />
+            <button @click="deleteCarDetails()">Delete Car</button>
+        </div>
+
+        <!-- Car List -->
+        <h2>Car List</h2>
+        <div id="car-list"></div>
+    </div>
+    <script src="mainfunct.js"></script>
+    
+</body>
+</html>

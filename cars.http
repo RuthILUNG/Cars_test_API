@@ -1,0 +1,28 @@
+## most popular car 
+get http://localhost:3000/api/popularcar
+###
+#getting cars 
+get http://localhost:3000/api/cars/
+####
+#get car by registration 
+
+####
+#add car 
+POST http://localhost:3000/api/cars HTTP/1.1
+content-type: application/json
+
+{
+   "color": "green", "make": "Honda", "model": "Civic", "reg_number": "GH 12345"
+
+}
+###  update 
+PATCH http://localhost:3000/api/cars/CK 41166
+content-type: application/json
+
+{
+   "color": "blue", "model": "Fiesta ST"
+
+}
+###
+#Delete 
+DELETE http://localhost:3000/api/cars/CK 41166

@@ -1,0 +1,43 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "contributors": [],
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "devDependencies": {
+    "axios": "^1.7.3",
+    "axios-mock-adapter": "^2.0.0",
+    "chai": "^5.1.1",
+    "mocha": "^10.7.0",
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security"
+  }
+}
